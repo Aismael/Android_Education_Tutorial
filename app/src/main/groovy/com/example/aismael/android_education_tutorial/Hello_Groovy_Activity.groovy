@@ -8,10 +8,16 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import com.arasthel.swissknife.SwissKnife
+import com.arasthel.swissknife.annotations.OnClick
+import com.arasthel.swissknife.annotations.OnItemClick
 import groovy.transform.CompileStatic
 
 @CompileStatic
 public class Hello_Groovy_Activity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +25,12 @@ public class Hello_Groovy_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_hello__groovy_)
         def toolbar = (Toolbar) findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        def fab = findViewById(R.id.fab)
-        fab.onClickListener={
-            Snackbar.make(fab.getRootView(), "we will load next Activity", Snackbar.LENGTH_LONG).setAction("Action", null).show()
-            //ILocator l = new OsmLocator()
-            //l.find('Berlin').each { println it }
-        }
+        // This must be called for injection of views and callbacks to take place
+        SwissKnife.inject(this);
+        // This must be called for saved state restoring
+        SwissKnife.restoreState(this, savedInstanceState);
+        // This mus be called for automatic parsing of intent extras
+        SwissKnife.loadExtras(this)
     }
 
     @Override
@@ -42,4 +47,10 @@ public class Hello_Groovy_Activity extends AppCompatActivity {
         }
         super.onOptionsItemSelected(item)
     }
+
+    @OnClick(R.id.fab)
+    public void onClick() {
+        Toast.makeText(this, "we will load next Activity", Toast.LENGTH_SHORT).show();
+    }
+
 }
