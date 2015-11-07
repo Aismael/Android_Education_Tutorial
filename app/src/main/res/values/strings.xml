@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android_Education_Tutorial</string>
     <string name="action_settings">Settings</string>
+    <string name="SearchColumn">SearchColumn</string>
+    <string name="Search">Search</string>
+    <string name="LocationData">LocationData</string>
 </resources>

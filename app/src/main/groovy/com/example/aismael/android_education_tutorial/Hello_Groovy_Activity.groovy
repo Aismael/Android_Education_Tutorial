@@ -1,5 +1,6 @@
 package com.example.aismael.android_education_tutorial
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -34,13 +35,13 @@ public class Hello_Groovy_Activity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_hello__groovy_, menu)
         true
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId()
         if (id == R.id.action_settings) {
             return true
@@ -49,8 +50,10 @@ public class Hello_Groovy_Activity extends AppCompatActivity {
     }
 
     @OnClick(R.id.fab)
-    public void onClick() {
-        Toast.makeText(this, "we will load next Activity", Toast.LENGTH_SHORT).show();
+     void onClick() {
+        Toast.makeText(this, "we will load next Activity", Toast.LENGTH_SHORT).show()
+        def i= new Intent(this, Location_Search.class)
+        startActivity(i)
     }
 
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="416dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Search"
+        android:id="@+id/SearchHeader"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:background="@color/bright_foreground_inverse_material_light" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SearchText"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:inputType="text" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Search"
+        android:id="@+id/SearchButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/LocationData"
+        android:id="@+id/SearchAnswer"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.34" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:id="@+id/back_button"
+        android:src="@android:drawable/ic_delete"
+        android:layout_gravity="right" />
+</LinearLayout>
