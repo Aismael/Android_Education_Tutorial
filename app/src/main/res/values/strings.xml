@@ -4,4 +4,5 @@
     <string name="SearchColumn">SearchColumn</string>
     <string name="Search">Search</string>
     <string name="LocationData">LocationData</string>
+    <string name="back_button">zurück knopf</string>
 </resources>

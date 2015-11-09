@@ -1,16 +1,40 @@
 package com.example.aismael.android_education_tutorial
 
-import groovy.transform.CompileStatic
+import android.location.Location
+import android.location.LocationListener
+import android.os.Bundle
 
-@CompileStatic
-class Location {
-	String name
-	String city
-	String street
-	String postalCode
-	String country
-	double latitude
-	double longitude
 
-	String toString() { "location[name=$name, city=$city, street=$street]@($latitude, $longitude)" }
+/* Class My Location Listener */
+
+class MyLocationListener implements LocationListener {
+    def la, lo
+
+    String toString() {
+        "@($la, $lo)"
+    }
+
+    @Override
+    public void onLocationChanged(Location loc) {
+        la = loc.getLatitude()
+        lo = loc.getLongitude()
+        println(this.toString())
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        println("Gps Disabled")
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+        println("Gps Enabled")
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {}
 }
+
+
+
+
